@@ -1,0 +1,94 @@
+\documentclass[12pt, a4paper, oneside]{article}
+\usepackage{helvet}
+\usepackage{graphicx}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{amsmath, amssymb, amsthm}
+\title{Calculo integral}
+
+\begin{document}
+\begin{titlepage}
+ \centering
+ {\bfseries\LARGE Instituto Tecnológico de Matamoros \par}
+ \vspace{1cm}
+ {\Large Ingeniería en Sistemas Computacionales \par}
+ \vspace{3cm}
+ {\Huge \it Tema 4  \par}
+ {\Huge \it Serie De Taylor \par}
+ \vspace{3cm}
+ {\itshape\large Docente: Cecilia Anzaldua Ramírez \par}
+ {\itshape\large Materia: Calculo Integral \par}
+ \vfill
+ {\itshape\large Equipo: \par}
+ {\itshape\large Carlos Daniel Cruz Castillo \par}
+ {\itshape\large José Emiliano Briceño Ramírez}
+ \vfill
+ {\large 16 de Mayo del 2025 \par}
+
+\end{titlepage}
+
+\section{Serie de Taylor}
+\subsection{Introducción}
+En matemáticas y en mundo real, muchas veces no podemos calcular de 
+forma totalmente exacta lo que nos rodea. Tenemos que recurrir a 
+aproximaciones para tratar de resolver ciertos problemas y que la 
+vida sea más sencilla.
+\par
+
+Las \textbf{series de Taylor} son una herramienta matemática fundamental 
+utilizada para aproximar funciones mediante polinomios. Esta técnica es
+ampliamente utilizada en cálculo , análisis matemático, física,
+ingeniería y otras ramas.\\
+
+Una serie de Taylor permite expresar una función suave (infinitamente 
+derivable) como una suma infinita de términos derivados de la función
+evaluada en un punto específico. Esta representación es especialmente 
+útil cuando una función es complicada o imposible de calcular
+directamente.\\
+
+Podemos empezar por las series de Taylor explicando \textbf{¿Qué es 
+el seno de un angulo $\theta$?}
+
+\[
+  \scalebox{1.5}{$\sin\theta$}\\
+\]
+
+Para hallarlo se suele construir un circulo de radio \textit{unidad} y un triangulo de esta forma con el angulo $\theta$.\\
+
+{
+  \centering
+  \includegraphics[scale=0.3]{./images/theta}
+  \par
+}
+
+Pues se dice que el {\large $\sin$} es la longitud del lado amarillo,
+mientras que la del lado rojo es el {\large $\cos$}. Si variamos el
+valor de {\large $\theta$} las longitudes de estos segmentos cambian, se hacen mas grandes y mas pequeños. Es decir, esto depende del ángulo
+{\large $\theta$} y por lo tanto, podemos dibujar cuanto valen el
+{\large $\sin$} y el {\large $\cos$} en función.\\
+\par
+
+{
+  \centering
+  \includegraphics[scale=0.3]{./images/function}
+  \par
+}
+
+Todo esto esta correcto, pero ahora
+\textbf{¿Qué que pasa si quiero calcular el seno de algo
+con muchos decimales?} Como $2.4521352121....$\\
+
+La respuesta lógica es que podríamos aumentar la precisión de las
+medidas y obtendríamos el resultado ¿No? Pues no es tan simple, ya 
+que no tenemos algo como "precisión suficiente" ya que son muchos
+decimales. Pero las calculadoras lo hacen ¿Verdad?\\
+\par
+
+\textbf{¿Como lo hacen las calculadoras?}\\
+Ya que es imposible de almacenar en la memoria de las calculadoras todos
+los valores del seno para todos los valores que se introduzca, suelen
+calcularlo de dos formas diferentes. La primera, un algoritmo muy famoso
+llamado \textbf{Cordic} y por las segunda, las \textbf{Series de Taylor}.
+\par
+
+
+\end{document}
