@@ -3,6 +3,8 @@
 \usepackage{graphicx}
 \renewcommand{\familydefault}{\sfdefault}
 \usepackage{amsmath, amssymb, amsthm}
+\usepackage{scalerel}
+\setlength{\parindent}{0pt}
 \title{Calculo integral}
 
 \begin{document}
@@ -88,7 +90,52 @@ Ya que es imposible de almacenar en la memoria de las calculadoras todos
 los valores del seno para todos los valores que se introduzca, suelen
 calcularlo de dos formas diferentes. La primera, un algoritmo muy famoso
 llamado \textbf{Cordic} y por las segunda, las \textbf{Series de Taylor}.
-\par
+\\
+\\
 
+\subsection{¿Que son las series de Taylor?}
+
+Las series de Taylor son representaciones de funciones mediante una suma infinita de términos calculados a partir de las derivadas de la función en un único punto. Permiten aproximar funciones complicadas con polinomiosmás manejables.\\
+
+{\large\textbf{Definición Formal}}\\
+Sea $f(x)$ una función infinitamente derivable en un punto $a$. La serie de Taylor de $f(x)$ centrada en $a$ es:
+
+\begingroup
+\Large
+\begin{equation*}
+  f(x) = \sum_{n=0}^\infty \frac{f^n(a)}{n!}(x-a)^n
+\end{equation*}
+\endgroup
+
+Donde:
+\begin{itemize}
+  \item $f^n(a)$: es la derivada n-ésima de $f$ evaluada en $a$.
+  \item $n!$: es el factorial de $n$.
+  \item $(x-a)^n$: es la potencia n-ésima del desplazamiento respecto a $a$
+\end{itemize}
+
+\subsection{¿Para que sirven?}
+Las series de Taylor se utilizan para:
+\begin{itemize}
+  \item Aproximar funciones difíciles de calcular(como $e^x$, $sin(x)$, $ln(x)$, etc).
+  \item Resolver ecuaciones diferenciales.
+  \item Realizar cálculos numéricos en ingeniería y física.
+  \item Analizar el comportamiento local de funciones.
+\end{itemize}
+
+\subsection{¿Cómo se calcula una Serie de Taylor?}
+Pasos:
+\begin{enumerate}
+  \item Elige el punto de desarrollo $a$
+  \item Calcula las derivadas sucesivas de $f(x)$
+  \item Evalúa esas derivadas en $a$
+  \item Sustituye en la fórmula:
+\end{enumerate}
+\begingroup
+\Large
+\begin{equation*}
+  f(x) \approx f(a) + f^\prime(a)(x-a) + \frac{f^{\prime\prime}(a)}{2!}(x-a)^2 + ...
+\end{equation*}
+\endgroup
 
 \end{document}
