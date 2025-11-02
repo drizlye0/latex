@@ -1,0 +1,685 @@
+\documentclass[12pt] {article}
+\usepackage[a4paper]{geometry}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage{svg}
+\usepackage{setspace}
+\usepackage{bm}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{helvet}
+
+\DeclareSymbolFont{letters}{OML}{ztmcm}{m}{it}
+\DeclareSymbolFontAlphabet{\mathnormal}{letters}
+
+\graphicspath{ {./assets/} }
+\renewcommand{\familydefault}{\sfdefault}
+\onehalfspacing
+ 
+\begin{document}
+\section*{Formulas de Frenet-Serret}
+\subsection*{Jean Frenet}
+
+Jean Frédéric Frenet (7 de febrero de 1816 - 12 de junio de 1900) fue un
+famoso matemático que introdujo la Teoría de Curvas junto a Joseph Serret. 
+En reconocimiento a su trabajo, se denomina a la base espacial definida
+por los vectores tangente, normal y binormal, triedro de Frenet-Serret.\medbreak
+
+Nació en Périgueux en 1816 y en el año 1840 ingresó en L’École Normale Superieure, 
+más tarde continuó sus estudios en Toulouse, ciudad en la que redactó su tesis doctoral
+durante 1847. Un fragmento de la mencionada tesis alberga la teoría de curvas en el espacio, 
+incluyendo las fórmulas que actualmente son conocidas como ‘fórmulas de Frenet – Serret’.
+Frenet aportó seis de dichas fórmulas, mientras que Serret proporcionó las nueve restantes.
+Cabe señalar que Frenet publicó este apartado de su tesis en el ‘Journal de mathématique pures et appliques’, en el año 1852. \medbreak
+
+Frenet llegó a ser profesor en Toulouse y, después, en 1848, ocupó un puesto de docente de matemáticas en Lyon.
+Además, también fue director del observatorio astronómico, donde, como tal, dirigió las observaciones meteorológicas. 
+
+\subsection*{Joseph Alfred Serret}
+Joseph Alfred Serret (París, Francia, 30 de agosto de 1819 - Versalles, Francia, 2 de marzo de 1885),
+más conocido como Joseph Serret, fue un matemático francés, conocido por desarrollar junto a Jean Frenet 
+la teoría de curvas. Editó los trabajos de Lagrange —publicados en catorce volúmenes entre 1867 y 1892
+y realizó la quinta edición de los de Monge en 1850. Una de sus principales obras fue el manual Cours
+d'Algèbre supérieure, editado en dos tomos. \medbreak
+
+Joseph-Alfred Serret era hijo de Pierre Antoine Serret y de Marie Virginie Tessier. Nacido en la calle de Sant Honoré de París, 
+realizó estudios superiores en la Escuela Politécnica de 1838 a 1840,que continuó en la Escuela de la Tabacalera. Renunció a su 
+trabajo como ingeniero de la tabacalera para regresar a París, donde se convirtió en examinador en el Colegio de Santa Bárbara. 
+En 1847 obtuvo el doctorado en ciencias matemáticas en la Facultad de Ciencias de París, y un año después se convirtió en examinador 
+de admisión en la Escuela Politécnica, cargo que ocupó hasta 1862. 
+
+\subsection*{Introduccion a las formulas de Frenet-Serret}
+
+En geometría diferencial, las fórmulas de Frenet-Serret describen las propiedades cinemáticas de una partícula 
+que se mueve a lo largo de una curva diferenciable en el espacio euclídeo tridimensional $ \mathbb{R}^{3} $, o las propiedades 
+geométricas de la propia curva módulo desplazamientos de la misma. Más específicamente, las fórmulas describen las derivadas de cada vector unitario 
+del triedro de Frenet-Serret en términos de los otros dos. Las fórmulas llevan el nombre de los dos matemáticos franceses que las descubrieron de forma 
+independiente: Jean Frédéric Frenet, en su tesis de 1847, y Joseph Alfred Serret, en 1851. La notación vectorial y el álgebra lineal que se emplean 
+actualmente para escribir estas fórmulas aún no estaban disponibles en el momento de su descubrimiento. \medbreak
+
+En cada punto de una curva diferenciable, el triedro de Frenet-Serret es una base ortonormal de $ \mathbb{R}^{3} $ formada por los siguientes vectores: 
+
+\begin{itemize}
+  \item $ T $ es el vector unitario tangente a la curva, apuntando en la dirección del movimiento.
+  \item $ N $ es el vector unitario normal, en el sentido de la derivada de $ T $ con respecto del parámetro longitud de arco.
+  \item $ B $ es el vector unitario binormal, el producto vectorial de $ T $ y $ N $.
+\end{itemize}
+
+Las formulas de Frenet-Serret son:
+{
+  \Large
+\begin{align*}
+\frac{d\mathbf{T}}{ds} &= \kappa \mathbf{N} \\ \\
+\frac{d\mathbf{N}}{ds} &= -\kappa \mathbf{T} + \tau \mathbf{B} \\ \\
+\frac{d\mathbf{B}}{ds} &= -\tau \mathbf{N}
+\end{align*}
+}
+
+Donde $ \frac{d}{ds} $ denota la derivada con respecto al parámetro longitud del arco, $ \kappa $ es la curvatura y $ \tau $ es la torsión de la curva, dos magnitudes escalares. 
+Intuitivamente, la curvatura mide lo que dista una curva de ser una línea recta, mientras que la torsión mide lo que dista una curva de ser plana.
+
+\begin{align*}
+  \centering
+  \includesvg[width=9cm, height=9cm]{./assets/Frenet.svg}
+\end{align*}
+
+Una curva alabeada; los vectores $ T $, $ N $ y $ B $; y el plano osculador atravesado por T y N
+
+\subsection*{Enunciado}
+Sea $ R(s) $ una curva en el espacio euclídeo, que representa el vector de posición de la partícula en función del tiempo. Las fórmulas 
+de Frenet-Serret se aplican a curvas que no son degeneradas, es decir, que se curvan en todo punto. Más formalmente, 
+se requiere que el vector de velocidad $ R'(s) $ y el vector de aceleración $ R''(s) $ no sean proporcionales. \medbreak
+
+Además, se puede suponer que la curva está parametrizada por el arco (es decir, que $\lvert\lvert R(s) \rvert\rvert = 1 $ para todo $ s $ ), ya que cualquier parametrización de la curva da la misma curvatura en cada punto. \medbreak
+
+En estas condiciones, el triedro de Frenet-Serret (o TNB) se define como: 
+\begin{itemize}
+  \item El vector unitario tangente $ T $ en un parametrización por el arco se define como: 
+
+    {
+    \Large
+    \begin{align*}
+      \mathbf{T} = \frac{d\mathbf{r}}{ds}
+    \end{align*}
+    }
+
+  \item El vector unitario normal N a su vez se define como:
+
+    {
+    \Large
+    \begin{align*}
+      \mathbf{N} = \frac{
+        \frac{d\mathbf{T}}{ds}
+      }{
+        \lvert\lvert \frac{d\mathbf{T}}{ds} \rvert\rvert
+      }
+    \end{align*}
+    }
+    de donde se sigue, ya que la longitud de $ \mathbf{T} $ es constantemente 1, que $ \mathbf{N} $ es perpendicular a $ \mathbf{T} $. Como
+    $ \kappa = \lvert\lvert \frac{d\mathbf{T}}{ds} \rvert\rvert $ , obtenemos la primera fórmula de Frenet-Serret. \\ \\ \\
+
+  \item El vector unitario binormal $ \mathbf{B} $ se define como el producto vectorial de $ \mathbf{T} $ y $ \mathbf{N} $:
+    {
+    \Large
+    \begin{align*}
+       \mathbf{B} = \mathbf{T} \times \mathbf{N} 
+    \end{align*}
+    }
+
+\end{itemize}
+
+\begin{align*}
+  \centering
+  \includesvg[width=15cm, height=15cm]{./assets/FrenetTN.svg}
+\end{align*}
+
+Los vectores $ \mathbf{T} $ y $ \mathbf{N} $ en dos puntos de una curva plana, una versión desplazada del segundo diedro (punteado) y
+el cambio en $ \mathbf{T} $, $ \delta\mathbf{T} $. Si $ s $ es la distancia entre los puntos, en el límite d T d s  apuntará en la dirección N y
+su magnitud —la curvatura— describe la velocidad de rotación del diedro. \medbreak
+
+Las fórmulas de Frenet-Serret (o Teorema de Frenet-Serret) son: 
+{
+  \Large
+\begin{align*}
+  \frac{d\bm{T}}{ds} &= \qquad\qquad \kappa \bm{N} \\[1em]
+  \frac{d\bm{N}}{ds} &= -\kappa \bm{T} \qquad\qquad\quad + \tau \bm{B} \\[1em]
+\frac{d\bm{B}}{ds} &= \qquad\quad -\tau \bm{N}
+\end{align*}
+}
+
+donde $ \kappa $  es la curvatura y $ \tau $ es la torsión. \medbreak
+
+O, en notación matricial:
+{
+\Large
+\begin{align*}
+  \begin{bmatrix}
+    \mathbf{T}' \\
+    \mathbf{N}' \\
+    \mathbf{B}' \\
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+    0 & \kappa & 0 \\
+    -\kappa & 0 & \tau \\
+    0 & -\tau & 0 \\
+  \end{bmatrix}
+  \begin{bmatrix}
+    \mathbf{T} \\
+    \mathbf{N} \\
+    \mathbf{B} \\
+  \end{bmatrix}
+\end{align*}
+}
+Esta matriz es antisimétrica
+
+\begin{align*} 
+  \centering
+  \includegraphics{Frenetframehelix}
+\end{align*}
+  El triedro de Frenet-Serret moviéndose a lo largo de una hélice . La $ \mathbf{T} $ está representada por la flecha azul,
+la $ \mathbf{N} $ por la flecha roja, y la $ \mathbf{B} $ por la flecha negra.
+
+\subsection*{Formulas en $ \mathbf{n} $ dimensiones}
+Las fórmulas de Frenet-Serret fueron generalizadas a espacios euclídeos de dimensión superior por Camille Jordan en 1874. \medbreak
+
+Supongamos que $ r(s) $ es una curva suave en $ \mathbb{R}^{n} $ , y que las primeras $ n $ derivadas de $ \mathbf{r} $
+son linealmente independientes. Los vectores en el $ n $-edro de Frenet-Serret son una base ortonormal
+construida aplicando el proceso de Gram-Schmidt a los vectores
+($ \mathbf{r} $'(s), $ \mathbf{r} $''(s), ..., $ \mathbf{r}^{(n)} $(s)). 
+
+El vector tangente unitario es el primer vector de Frenet $ e_1(s) $, y se define como: 
+
+{
+  \Large
+  \begin{align*}
+    e_1(s) = \frac{\overline{e_1}(s)}{\lvert\lvert \overline{e_1}(s) \rvert\rvert }
+  \end{align*}
+}
+donde
+{
+  \Large
+  \begin{align*}
+    e_1(s) = \mathbf{r}'(s)
+  \end{align*}
+}
+
+
+El vector normal, a veces llamado vector de curvatura, indica lo que dista la curva de ser una línea 
+recta. Se define como: 
+{
+  \Large
+  \begin{align*}
+    \overline{e_2}(s) = \mathbf{r}^{n}(s) - (\mathbf{r}^{n}(s), e_1(s))e_1(s)
+  \end{align*}
+}
+
+Su forma normalizada, el vector normal unitario, es el segundo vector de Frenet $ e_2(s) $ y se define como: 
+{
+  \Large
+  \begin{align*}
+    e_2(s) =  \frac{\overline{e_2}(s)}{\lvert\lvert \overline{e_2}(s) \rvert\rvert}
+  \end{align*}
+}
+
+Los vectores tangente y normal en el punto s definen el plano osculador en el punto $ r(s) $. \medbreak
+
+Los vectores restantes en el $ n $-edro (el binormal, trinormal, etc.) se definen de manera similar: 
+{
+  \Large
+  \begin{align*}
+    e_j(s) &=  \frac{\overline{e_j}(s)}{\lvert\lvert \overline{e_j}(s) \rvert\rvert} \\
+    \overline{e_j}(s) &= \mathbf{r}^{(j)}(s) - \sum_{i=1}^{j-1}(\mathbf{r}^{(j)}(s), e_i(s))e_i(s)
+  \end{align*}
+}
+
+El último vector del sistema se define como el producto vectorial de los primeros $ n-1 $  vectores: 
+{
+  \Large
+  \begin{align*}
+    e_n(s) = e_1(s) \times e_2(s) \times ... \times e_{n-2}(s) \times e_{n-1}(s)
+  \end{align*}
+}
+
+Las siguientes funciones reales $ \chi_i(s) $ se denominan curvaturas generalizadas: 
+{
+  \Large
+  \begin{align*}
+    \chi_i(s) = \frac{\langle e'_i(s), e_{i+1}(s) \rangle}{\lvert\lvert \mathbf{r}'(s) \rvert\rvert}
+  \end{align*}
+}
+
+Las fórmulas de Frenet-Serret, expresadas en lenguaje matricial, son:
+{
+  \Large
+  \begin{align*}
+   \begin{bmatrix}
+     e_1'(s) \\
+     \vdots \\ 
+     e_n'(s) \\
+   \end{bmatrix}  
+   = \lvert\lvert \mathbf{r}'(s) \rvert\rvert \cdot
+   \begin{bmatrix}
+    0          & \chi_1(s) &                & 0 \\
+    -\chi_1(s) & \ddots    & \ddots         &  \\
+               & \ddots    & 0              &  \\
+    0          &           & -\chi_{n-1}(s) & 0 \\
+   \end{bmatrix}
+   \begin{bmatrix}
+      e_1(s) \\
+      \vdots \\ 
+      e_n(s) \\
+   \end{bmatrix}
+  \end{align*}
+}
+
+Nótese que la convención usada al definir las curvaturas y el sistema de Frenet en dimensión $ n $ no es universal. 
+La curvatura superior $ \chi_{n-1} $ (también llamada torsión, en este contexto) y el último vector en el marco $ e_n $, 
+difieren de la torsión habitual por el signo 
+
+\subsection*{Ejemplo: Hélice circular}
+Considera la curva:
+{
+  \Large
+  \begin{align*}
+    r(t) = (a\cos t, a \sin t, bt)
+  \end{align*}
+}
+donde $ a $ y $ b $ son constantes; Calcule los vectores $ \mathbf{T}, \mathbf{N}, \mathbf{B} $, la curvatura $ \kappa $ 
+y la torsión $ \tau $ y verifique las ecuaciones con las formulas de Frenet-Serret
+
+\subsubsection*{Derivadas de $ r $}
+{
+  \large
+  \begin{align*}
+    r'(t) &= (-a \sin t, a \cos t, b) \\
+    r''(t) &= (-a \cos t, -a \sin t, 0) \\
+    r'''(t) &= (a \sin t, -a \cos t, 0) \\ 
+    \lvert r'(t) \rvert &= \sqrt{ (-a \sin t)^2 + (a \cos t)^2 + b^2 } \\
+    \lvert r'(t) \rvert &= \sqrt{a^2 + b^2}
+  \end{align*}
+}
+
+\subsubsection*{Vector tangente unitario $ \mathbf{T} $}
+{
+  \large
+  \begin{align*}
+    \mathbf{T}(t) &= \frac{r'(t)}{\lvert r'(t) \rvert} \\
+    \mathbf{T}(t) &= \frac{1}{\sqrt{a^2 + b^2}}(-a \sin t, a \cos t, b) 
+  \end{align*}
+}
+
+su derivada con respecto a $ t $
+{
+  \large
+  \begin{align*}
+    \frac{d\mathbf{T}}{dt} &= \frac{1}{\sqrt{a^2 + b^2}}(-a \cos t, -a \sin t, 0) \\
+  \end{align*}
+}
+
+su derivada con respecto a la longitud de arco $ s $ usamos $ \frac{d}{ds} = \frac{1}{\lvert r' \rvert} \frac{d}{dt} $
+{
+  \large
+  \begin{align*}
+    \frac{d\mathbf{T}}{ds} &= \frac{1}{\lvert r' \rvert}\frac{d\mathbf{T}}{dt} =
+    \frac{1}{\sqrt{a^2 + b^2}} \cdot \frac{1}{\sqrt{a^2 + b^2}}(-a \cos t, -a \sin t, 0) \\
+    \frac{d\mathbf{T}}{ds} &= \frac{1}{a^2 + b^2}(-a \cos t, -a \sin t, 0)
+  \end{align*}
+}
+
+\subsubsection*{Vector normal principal $ \mathbf{N} $}
+
+La dirección de $ \mathbf{N} $ de $ \frac{d\mathbf{T}}{ds} $. Observamos que
+{
+  \large
+  \begin{align*}  
+    \frac{d\mathbf{T}}{ds} &= \frac{1}{a^2 + b^2}(-a \cos t, -a \sin t, 0) \\
+    \lvert\lvert \frac{d\mathbf{T}}{ds} \rvert\rvert &= \sqrt{
+      \frac{(-a \cos t)^2 + (-a \sin t)^2 + 0^2}{(a^2+b^2)^2}
+    } = \sqrt{
+      \frac{a^2(\cos^2 t + \sin^2 t)}{(a^2 + b^2)^2}
+    } \\ 
+      \lvert\lvert \frac{d\mathbf{T}}{ds} \rvert\rvert &=
+      \sqrt{
+        \frac{a^2}{(a^2 + b^2)^2}
+      } = \frac{a}{a^2 + b^2} \\ 
+      \frac{
+        \frac{d\mathbf{T}}{ds}
+      }{
+        \lvert\lvert \frac{d\mathbf{T}}{ds} \rvert\rvert
+    } &= \frac{
+        \frac{(-a \cos t -a \sin t + 0)}{a^2 + b^2}
+      }{
+        \frac{a}{a^2 + b^2} 
+      } = \frac{(a^2 + b^2)(-a \cos t -a \sin t + 0)}{(a^2 + b^2)(a)} \\
+      \frac{
+        \frac{d\mathbf{T}}{ds}
+      }{
+        \lvert\lvert \frac{d\mathbf{T}}{ds} \rvert\rvert
+      } &= \frac{a(- \cos t - \sin t + 0)}{a} = (- \cos t - \sin t + 0)
+  \end{align*}
+}
+Entonces el vector unitario normal es:
+{
+  \large
+  \begin{align*} 
+    \mathbf{N}(t) =
+    \frac{
+        \frac{d\mathbf{T}}{ds}
+      }{
+        \lvert\lvert \frac{d\mathbf{T}}{ds} \rvert\rvert
+      }
+    = (- \cos t, - \sin t, 0)
+  \end{align*}
+}
+(Nótese que $ \mathbf{N} $ ya es unitario porque $ \cos^2 t + \sin^2 t = 1 $)
+
+\subsubsection*{Curvatura $ \kappa $}
+Usamos la fórmula $ \kappa = \frac{\lvert r' \times r'' \rvert}{\lvert r' \rvert^3} $
+
+Primero el producto vectorial:
+{
+  \large
+  \begin{align*}
+    r' \times r'' &= 
+    \begin{vmatrix}
+      i & j & k \\
+      -a \sin t & a \cos t & b \\
+      -a \cos t & -a \sin t & 0 \\
+    \end{vmatrix} \\
+    r' \times r'' &= i
+    \begin{vmatrix}
+      a \cos t & b  \\
+      -a \sin t & 0 \\
+    \end{vmatrix} - j
+    \begin{vmatrix}
+      -a \sin t & b \\
+      -a \cos t & 0 \\
+    \end{vmatrix} + k
+    \begin{vmatrix}
+      -a \sin t & a \cos t \\
+      -a \cos t & -a \sin t \\
+    \end{vmatrix} \\
+    r' \times r'' &= i(ab \sin t) - j(ab \cos t) + k(a^2 \sin^2 t + a^2 \cos^2 t) \\
+    r' \times r'' &= i(ab \sin t) - j(ab \cos t) + k(a^2 (\sin^2 t + \cos^2 t)) \\
+    r' \times r'' &= i(ab \sin t) - j(ab \cos t) + k(a^2)
+  \end{align*}
+}
+Su magnitud:
+{
+  \large
+  \begin{align*}
+    \lvert r' \times r'' \rvert &= \sqrt{(ab \sin t)^2 + (-ab \cos t)^2 + (a^2)^2} \\
+    \lvert r' \times r'' \rvert &= \sqrt{(ab)^2 (\sin t + \cos t)^2 + (a^2)^2} =\sqrt{(ab)^2 (\sin^2 t + \cos^2 t) + a^4}
+    \\
+    \lvert r' \times r'' \rvert &= \sqrt{a^4 + (ab)^2} = \sqrt{a^2(a^2 + b^2)} = \sqrt{a^2}\sqrt{a^2+b^2} \\
+    \lvert r' \times r'' \rvert &= a\sqrt{a^2+b^2}
+  \end{align*}
+}
+y tambien $ \lvert r' \rvert $:
+{
+  \large
+  \begin{align*}
+    \lvert r' \rvert &= \sqrt{(-a \sin t)^2 + (a \cos t)^2 + b^2} = \sqrt{a^2(\sin^2 t + \cos^2 t) + b^2} \\
+    \lvert r' \rvert &= \sqrt{a^2 + b^2}
+  \end{align*}
+}
+Entonces:
+{
+  \large
+  \begin{align*}
+    \kappa &= \frac{a\sqrt{a^2 + b^2}}{(\sqrt{a^2 + b^2})^3} = \frac{a\sqrt{a^2 + b^2}}{
+    (\sqrt{a^2 + b^2}) (\sqrt{a^2 + b^2})^2
+  } = \frac{a}{(\sqrt{a^2 + b^2})^2} \\
+  \kappa &= \frac{a}{a^2 + b^2}
+  \end{align*}
+}
+
+\subsubsection*{Vector binormal $ \mathbf{B} $}
+{
+  \large
+  \begin{align*}  
+    \mathbf{B} = \mathbf{T} \times \mathbf{N}
+  \end{align*}
+}
+Primero el producto vectorial:
+{
+  \large
+  \begin{align*}  
+    \lvert \mathbf{T} \times \mathbf{N} \rvert =
+    \begin{vmatrix}
+      i & j & k \\
+      \frac{-a \sin t}{\sqrt{a^2 + b^2}} & \frac{a \cos t}{\sqrt{a^2 + b^2}} & \frac{b}{\sqrt{a^2 + b^2}} \\
+      - \cos t & - \sin t & 0 \\
+    \end{vmatrix}
+  \end{align*}
+  \begin{align*}
+    \lvert \mathbf{T} \times \mathbf{N} \rvert &= 
+    i
+    \begin{vmatrix}
+      \frac{-a \cos t}{\sqrt{a^2 + b^2}} & \frac{b}{\sqrt{a^2 + b^2}} \\
+      - \sin t & 0 \\ 
+    \end{vmatrix} 
+    - j
+    \begin{vmatrix}
+      \frac{-a \sin t}{\sqrt{a^2 + b^2}} & \frac{b}{\sqrt{a^2 + b^2}} \\
+      - \cos t & 0 \\ 
+    \end{vmatrix}
+    + k
+    \begin{vmatrix}
+      \frac{-a \sin t}{\sqrt{a^2 + b^2}} & \frac{a \cos t}{\sqrt{a^2 + b^2}} \\
+      - \cos t & - \sin t \\ 
+    \end{vmatrix} \\
+    \lvert \mathbf{T} \times \mathbf{N} \rvert &=
+    i
+    (\frac{b \sin t}{\sqrt{a^2 + b^2}})
+    - j
+    (\frac{b \cos t}{\sqrt{a^2 + b^2}})
+    + k
+    (\frac{-a \sin^2 t}{\sqrt{a^2 + b^2}} + \frac{a \cos^2 t}{\sqrt{a^2 + b^2}}) \\
+    \lvert \mathbf{T} \times \mathbf{N} \rvert &=
+    i
+    (\frac{b \sin t}{\sqrt{a^2 + b^2}})
+    - j
+    (\frac{b \cos t}{\sqrt{a^2 + b^2}})
+    + k
+    (\frac{a}{\sqrt{a^2 + b^2}}(\sin^2 + \cos^2)) \\
+    \lvert \mathbf{T} \times \mathbf{N} \rvert &=
+    i
+    (\frac{b \sin t}{\sqrt{a^2 + b^2}})
+    - j
+    (\frac{b \cos t}{\sqrt{a^2 + b^2}})
+    + k
+    (\frac{a}{\sqrt{a^2 + b^2}}) \\
+  \end{align*}
+}
+Entonces el vector binormal:
+{
+  \large
+  \begin{align*}
+    \mathbf{B}(t) = \frac{1}{\sqrt{a^2 + b^2}}(b \sin t, -b \cos t, a)
+  \end{align*}
+}
+y verificaremos que sea unitario:
+{
+  \large
+  \begin{align*}
+    \lvert \mathbf{B}(t) \rvert &= \sqrt{
+      \frac{
+        (b \sin t)^2 + (-b \cos t)^2 + a^2
+      }{
+        (\sqrt{a^2 + b^2})^2
+      }
+    } = \sqrt{
+      \frac{
+        b^2 \sin^2 t + b^2 \cos^2 t + a^2
+      }{
+        \sqrt{a^2 + b^2}
+      }
+    } \\
+    \lvert \mathbf{B}(t) \rvert &= \sqrt{
+      \frac{
+        b^2(\sin^2 t + \cos^2 t) + a^2
+      }{
+        a^2 + b^2
+      }
+    } = \sqrt{\frac{b^2 + a^2}{a^2 + b^2}} = \sqrt{1} = 1
+  \end{align*}
+}
+
+\subsubsection*{Torsión $ \tau $}
+Usamos la formula
+{
+  \large
+  \begin{align*}
+    \tau = \frac{(r' \times r'') \cdot r'''}{\lvert r' \times r'' \rvert^2}
+  \end{align*}
+}
+Ya tenemos $ (r' \times r''') $ , $ r''' $ y $ \lvert r' \times r'' \rvert $:
+{
+  \large
+  \begin{align*}
+    r' \times r''' &= (ab \sin t, -ab \cos t, a^2) \\
+    r''' &= (a \sin t, -a \cos t, 0) \\
+    \lvert r' \times r'' \rvert &= a\sqrt{a^2 + b^2}
+  \end{align*}
+}
+Calculamos el cuadrado de $ \lvert r' \times r'' \rvert $
+{
+  \large
+  \begin{align*}
+    \lvert r' \times r'' \rvert^2 &= (a\sqrt{a^2 + b^2})^2 = a^2(\sqrt{a^2 + b^2})^2 = a^2(a^2 + b^2)
+  \end{align*}
+}
+Entonces
+{
+  \large
+  \begin{align*}
+    \tau &= \frac{(ab \sin t -ab \cos t + a^2)(a \sin t -a \cos t + 0)}{a^2(a^2 + b^2)} \\
+    \tau &= \frac{ab \sin t \cdot a \sin t + (-ab \cos t)(-a \cos t) + a^2(0)}{a^2(a^2 + b^2)} \\
+    \tau &= \frac{a^2b \sin^2 t + a^2b \cos^2 t}{a^2(a^2 + b^2)} = \frac{a^2b(\sin^2 t + \cos^2 t)}{a^2 (a^2 + b^2)}
+    = \frac{a^2b}{a^2(a^2 + b^2)} \\
+    \tau &=  \frac{b}{a^2 + b^2}
+  \end{align*}
+}
+
+\subsubsection*{Verificaciones con las formulas de Frenet-Serret}
+Las formulas de Frenet-Serret son:
+{
+  \large
+  \begin{align*}
+    \frac{d\mathbf{T}}{ds} &= \kappa \mathbf{N} \\ 
+    \frac{d\mathbf{N}}{ds} &= -\kappa \mathbf{T} + \tau \mathbf{B} \\
+    \frac{d\mathbf{B}}{ds} &= -\tau \mathbf{N}
+  \end{align*}
+}
+
+para la primera formula ya hemos calculado $ \frac{d\mathbf{T}}{ds} $ :
+{
+  \large
+  \begin{align*}
+    \frac{d\mathbf{T}}{ds} = \kappa \mathbf{N}
+  \end{align*}
+  \begin{align*}  
+    \frac{1}{a^2 + b^2}(-a \cos t, -a \sin t, 0) &= \frac{a}{a^2 + b^2} (- \cos t, - \sin t, 0) \\
+    \frac{(-a \cos t, -a \sin t, 0)}{a^2 + b^2} &= \frac{(-a \cos t, -a \sin t, 0)}{a^2 + b^2}
+  \end{align*}
+}
+
+para la segunda formula calcularemos $ \frac{d\mathbf{N}}{ds} $
+{
+  \large
+  \begin{align*}
+    \frac{d\mathbf{N}}{ds} &= -\kappa \mathbf{T} + \tau \mathbf{B} \\
+  \end{align*}
+  \begin{align*}
+    \frac{d\mathbf{N}}{ds} &= \frac{1}{\lvert r' \rvert} \frac{d\mathbf{N}}{dt} = 
+    \frac{1}{\sqrt{a^2 + b^2}}(\sin t, -\cos t, 0)
+  \end{align*}
+}
+
+calculo de $ -\kappa\,\mathbf{T} + \tau\,\mathbf{B} $
+{
+  \begin{align*}
+    -\kappa\,\mathbf{T} + \tau\,\mathbf{B}
+    &= -\frac{a}{a^2+b^2}\frac{1}{\sqrt{a^2+b^2}}(-a\sin t,\, a\cos t,\, b)
+    + \frac{b}{a^2+b^2}\frac{1}{\sqrt{a^2+b^2}}(b\sin t,\, -b\cos t,\, a)
+    \\
+    -\kappa\,\mathbf{T} + \tau\,\mathbf{B}
+    &= \frac{1}{(a^2+b^2)^{3/2}}
+    \big(
+    a^2\sin t + b^2\sin t,\;
+    - a^2\cos t - b^2\cos t,\;
+    -ab + ab
+    \big) \\
+    -\kappa\,\mathbf{T} + \tau\,\mathbf{B} &= \frac{1}{\sqrt{a^2+b^2}}(\sin t,\; -\cos t,\; 0).
+\end{align*}
+}
+
+Entonces:
+{
+  \large
+  \begin{align*}
+    \frac{d\mathbf{N}}{ds} &= -\kappa \mathbf{T} + \tau \mathbf{B} \\ 
+    \frac{1}{\sqrt{a^2+b^2}}(\sin t,\; -\cos t,\; 0) &= \frac{1}{\sqrt{a^2+b^2}}(\sin t,\; -\cos t,\; 0)
+  \end{align*}
+}
+
+Para la tercera formula calcularemos $ \frac{d\mathbf{B}}{ds} $
+{
+  \large
+  \begin{align*}
+    \frac{d\mathbf{B}}{ds} &= -\tau \mathbf{N}
+  \end{align*}
+  \begin{align*}
+    \frac{d\mathbf{B}}{ds} = \frac{1}{\lvert r' \rvert} \frac{d\mathbf{B}}{dt} = 
+    \frac{1}{a^2 + b^2}(b \cos t, b \sin t, 0)
+  \end{align*}
+}
+calculo de $ -\tau \mathbf{N}  $
+
+{
+  \large
+  \begin{align*}
+    -\tau \mathbf{N} &= -\frac{b}{a^2 + b^2}(- \cos t, - \sin t, 0) \\
+    -\tau \mathbf{N} &= \frac{1}{a^2 + b^2}(b \cos t, b \sin t, 0)
+  \end{align*}
+}
+
+Entonces
+{
+  \large
+  \begin{align*}
+    \frac{d\mathbf{B}}{ds} &= -\tau \mathbf{N} \\
+    \frac{1}{a^2 + b^2}(b \cos t, b \sin t, 0) &= \frac{1}{a^2 + b^2}(b \cos t, b \sin t, 0)
+  \end{align*}
+}
+
+\subsubsection*{Conclusion}
+Para la hélice $ r(t) = (a \cos t, a \sin t, bt) $
+{
+  \large
+  \begin{itemize}
+    \item $ \lvert r' \rvert = \sqrt{a^2 + b^2} $
+    \item $ \mathbf{T}(t) = \frac{1}{\sqrt{a^2 + b^2}}(-a \sin t, a \cos t, b) $
+    \item $ \mathbf{N}(t) = (- \cos t, - \sin t, 0) $
+    \item $ \mathbf{B}(t) = \frac{1}{\sqrt{a^2 + b^2}}(b \sin t, -b \cos t, a) $
+    \item $ \kappa = \frac{a}{a^2 + b^2}$
+    \item $ \tau = \frac{b}{a^2 + b^2} $
+  \end{itemize}
+}
+
+Con esto concluimos que las 3 formulas de Frenet-Serret se cumplen y obtenemos el Tiedro de Frenet:
+{
+  \begin{figure}  
+    \begin{center}
+    \includegraphics[width=15cm, height=15cm]{geogebra-export}
+    \includegraphics[width=10cm, height=10cm]{geogebra}
+    \end{center}
+  \end{figure}
+}
+\newpage
+
+\subsection*{Aplicaciones}
+
+\end{document}
