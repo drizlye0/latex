@@ -8,6 +8,7 @@
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{helvet}
+\usepackage{caption}
 
 \DeclareSymbolFont{letters}{OML}{ztmcm}{m}{it}
 \DeclareSymbolFontAlphabet{\mathnormal}{letters}
@@ -17,7 +18,7 @@
 \onehalfspacing
  
 \begin{document}
-\section*{Formulas de Frenet-Serret}
+\section*{Formulas de Frenet-Serret y El Vector Torsión}
 \subsection*{Jean Frenet}
 
 Jean Frédéric Frenet (7 de febrero de 1816 - 12 de junio de 1900) fue un
@@ -680,6 +681,63 @@ Con esto concluimos que las 3 formulas de Frenet-Serret se cumplen y obtenemos e
 }
 \newpage
 
-\subsection*{Aplicaciones}
+\subsection*{Aplicaciones e interpretación}
+\subsubsection*{Cinemática del triedro}
+El triedro de Frenet-Serret asocia a cada punto de la curva una base ortonormal del espacio, o 
+sea, un sistema de referencia o sistema de coordenadas (ver imagen). \medbreak
+
+Las fórmulas de Frenet-Serret admiten una interpretación cinemática: imagínese a un observador que
+se mueve a lo largo de la curva en el tiempo, utilizando el triedro de Frenet en cada punto como
+su sistema de coordenadas. Las fórmulas de Frenet-Serret dictan que este sistema de coordenadas 
+va girando a medida que el observador se mueve a lo largo de la curva. Por lo tanto, este sistema 
+de coordenadas siempre es no inercial. El momento angular del sistema de coordenadas del
+observador es proporcional al vector de Darboux del triedro.
+
+\begin{figure}[htbp]
+  \begin{center}
+    \includegraphics[width=6cm, height=10cm]{helice}
+    \caption*{El triedro de Frenet-Serret moviéndose a lo largo de una hélice en el espacio}
+  \end{center}
+\end{figure}
+
+Más conretamente, supongamos que el observador lleva consigo un trompo (inercial) 
+(o un giroscopio) a lo largo de la curva. Si el eje de la peonza apunta en la dirección del 
+tangente, se observará que gira alrededor de su eje con una velocidad angular $ -\tau $ 
+relativa al sistema de coordenadas no inercial del observador. Si, por el contrario, el eje de la peonza apunta en la dirección del binormal, entonces se observa que gira con velocidad
+angular $ -\kappa $. 
+Esto se visualiza fácilmente en el caso de que la curvatura sea una constante positiva y la 
+torsión desaparezca. El observador se encuentra entonces en movimiento circular uniforme . 
+Si la peonza apunta en la dirección del binormal, entonces, por conservación del momento angular, 
+debe girar en la dirección opuesta al movimiento circular. En el caso límite cuando la curvatura 
+desaparece, la normal para el observador sufre una precesión sobre el vector tangente y, 
+de manera similar, el trompo girará en la dirección opuesta a esta precesión. 
+
+\subsubsection*{Aplicaciones del Triedro de Frenet}
+La cinemática del triedro tiene muchas aplicaciones en las ciencias. 
+\begin{itemize}
+  \item En las ciencias de la vida, particularmente en modelos de movimiento microbiano, se ha utilizado el triedro de Frenet-Serret para explicar el mecanismo a través del cual un organismo en movimiento en un medio viscoso cambia de dirección
+  \item En física, el triedro de Frenet-Serret es útil cuando es imposible o inconveniente asignar un sistema de coordenadas naturales para una trayectoria. Tal es a menudo el caso, por ejemplo, en la teoría de la relatividad . En este contexto, los marcos de Frenet-Serret se han utilizado para modelar la precesión de un giroscopio en un pozo gravitatorio
+\end{itemize}
+
+\subsubsection*{Cintas y Tubos}
+El aparato de Frenet-Serret permite definir ciertas cintas y tubos óptimos centrados alrededor de
+una curva. Sus aplicaciones abarcan los ámbitos de la ciencia de los materiales y la teoría de
+la elasticidad, así como los gráficos por computadora.
+
+\begin{figure}[htbp]
+  \begin{center}
+    \includegraphics[width=10cm, height=8cm]{Ribbon-Frenet}
+    \caption*{Una cinta definida por una curva de torsión constante y una curvatura muy oscilante. La parametrización por la longitud de arco de la curva se definió mediante la integración de las ecuaciones de Frenet-Serret.}
+  \end{center}
+\end{figure}
+
+La cinta de Frenet a lo largo de una curva $ C $ es la superficie trazada al barrer el segmento de
+línea $ [- N, N] $ generado por la unidad normal a lo largo de la curva. Esta superficie se 
+confunde a veces con la superficie desarrollable tangente, que es la envolvente $ E $ de los 
+planos osculadores de $ C $, dado que tanto la cinta de Frenet como $ E $ exhiben propiedades 
+similares a lo largo de $ C $. Concretamente, los planos tangentes de ambas hojas de $ E $, cerca 
+de la singularidad $ C $ donde se cruzan estas láminas, se aproximan a los planos osculadores 
+de $ C $; los planos tangentes de la cinta de Frenet a lo largo de $ C $ son iguales a estos 
+planos osculadores. La cinta de Frenet en general no es desarrollable. 
 
 \end{document}

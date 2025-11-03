@@ -1,4 +1,4 @@
-PWD /home/riku/projects/latex/frenet-serret
+PWD /home/sora/code/latex/frenet-serret
 INPUT /usr/share/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
 INPUT main.tex
@@ -123,6 +123,10 @@ INPUT /usr/share/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 INPUT /usr/share/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 INPUT /usr/share/texmf-dist/tex/latex/psnfss/helvet.sty
 INPUT /usr/share/texmf-dist/tex/latex/psnfss/helvet.sty
+INPUT /usr/share/texmf-dist/tex/latex/caption/caption.sty
+INPUT /usr/share/texmf-dist/tex/latex/caption/caption.sty
+INPUT /usr/share/texmf-dist/tex/latex/caption/caption3.sty
+INPUT /usr/share/texmf-dist/tex/latex/caption/caption3.sty
 INPUT /usr/share/texmf-dist/tex/latex/psnfss/ot1phv.fd
 INPUT /usr/share/texmf-dist/tex/latex/psnfss/ot1phv.fd
 INPUT /usr/share/texmf-dist/tex/latex/psnfss/ot1phv.fd
@@ -324,6 +328,14 @@ INPUT ./assets/geogebra.png
 INPUT ./assets/geogebra.png
 INPUT /usr/share/texmf-dist/fonts/vf/adobe/helvetic/phvr8c.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/adobe/helvetic/phvr8r.tfm
+INPUT ./assets/helice.png
+INPUT ./assets/helice.png
+INPUT ./assets/helice.png
+INPUT ./assets/helice.png
+INPUT ./assets/Ribbon-Frenet.png
+INPUT ./assets/Ribbon-Frenet.png
+INPUT ./assets/Ribbon-Frenet.png
+INPUT ./assets/Ribbon-Frenet.png
 INPUT main.aux
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
