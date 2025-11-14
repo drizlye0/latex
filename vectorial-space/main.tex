@@ -1,0 +1,108 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper, margin=2.4cm]{geometry}
+\usepackage{helvet}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\usepackage[labelformat=empty]{caption}
+\renewcommand{\familydefault}{\sfdefault}
+
+\graphicspath{ {./assets/} }
+
+\begin{document}
+\mathversion{bold}
+\section{Definicion de Espacio Vectorial}
+Un espacio vectorial es un conjunto no vacío V de objetos, llamados vectores,
+en el que están definidas dos operaciones, llamadas suma y multiplicación por
+escalares (números reales). (David C. Lay, 2007, p. 217)
+
+Estas operaciones deben cumplir con un conjunto específico de propiedades o axiomas, como la asociatividad, conmutatividad, distributividad y existencia de un elemento neutro. La suma de dos vectores debe resultar en otro vector dentro del mismo espacio, y el producto de un escalar por un vector también debe dar como resultado un vector del espacio.
+
+\subsection{Notacion}
+Si $ x $ y $ y $ están en $ V $ y si a es un número real, entonces la suma se escribe como
+$ x + y $ y el producto escalar de $ a $ y $ x $ como $ ax $. (Stanley I. Grossman, 2007, p. 282) \medbreak
+
+Ejemplo:
+Sea $ x, y \in V $ vectores pertenecientes a un espacio vectorial, y $ a \in \mathbb{R} $ un escalar perteneciente a los numeros reales.
+
+
+\begin{itemize}
+  \item Suma: 
+    {
+     \Large
+    \begin{align*}
+      x + y = (x_1, + y_1, x_2 + y_2, \dotsb , x_n + y_n)
+    \end{align*}
+    }
+  \item Multiplicación por un escalar:
+    {
+      \large
+      \begin{align*}
+        ax = (ax_1, ax_2, \dotsb , ax_3)
+      \end{align*}
+    }
+\end{itemize}
+
+\subsection{Axiomas de un espacio vectorial}
+\begin{enumerate}
+  \item Si $ x \in V  $ y $ y \in V $, entonces $ x + y \in V $ \textbf{(cerradura bajo la suma)}.
+  \item Para todos $ x , y , z $ en $ V $, $ (x + y) + z = x + (y + z) $ \textbf{(ley asociativa de la suma de vectores)}.
+  \item Existe un vector $ 0 \in V $  tal que para todo $ x \in V, x + 0  = 0 + x = x $  (el 0 se llama \textbf{vector cero} o \textbf{identico aditivo}).
+  \item Si $ x \in V $, existe un vector $ -x $ en $ \in V $ tal que $ x + (-x) $ = 0 ($ -x $ se llama \textbf{inverso aditivo de x}).
+  \item Si $ x $ y $ y $ estan en $ V $, entonces $ x + y = y + x $ \textbf{(ley conmutativa de la suma de vectores)}.
+  \item Si $ x \in V $ y $ \alpha $ es un escalar, entonces $ \alpha x \in V $ \textbf{(cerradura bajo la multiplicación por un escalar)}
+  \item Si $ x $ y $ y $ estan en $ V $ y $ \alpha $ es un escalar, entonces $ \alpha (x + y) = \alpha x + \alpha y $ \textbf{(primera ley distributiva)}
+  \item Si $ x \in V $ y $ \alpha $ y $ \beta $ son escalares, entonces $ (\alpha + \beta)x = \alpha x + \beta x $ \textbf{(segunda ley distributiva)}.
+  \item Si $ x \in V $ y $ \alpha $ y $ \beta $ son escalares, entonces $ \alpha (\beta x) = (\alpha \beta )x $ \textbf{(ley asociativa de la multiplicación por escalares)}.
+  \item Para cada vector $ x \in V , 1x = x$
+\end{enumerate}
+(Stanley I. Grossman, 2007, 282).
+
+\subsection{Ejemplo}
+El conjunto
+{\large \[ \mathbb{R}^{3} = \{ (x, y, z) | z, y, z \in \mathbb{R} \} \]}
+con las operaciones usuales:
+\begin{itemize}
+  \item Suma
+    {\large \[ (x_1, y_1, z_1 ) + (x_2, y_2, z_2) = (x_1 + x_2, y_1 + y_2, z_1 + z_2) \]}
+  \item Producto por escalar:
+    {\large \[ a(x, y, z) = (ax, ay, az) \]}
+\end{itemize}
+
+y cumple con los 10 axiomas de espacio vectorial, entonces $ \mathbb{R}^3 $ \textbf{es un espacio vectorial}
+
+Ejemplo grafico:
+\begin{figure}[htbp]
+  \begin{center}
+    \includegraphics[width=0.50\textwidth]{octant}
+  \end{center}
+\end{figure}
+
+\newpage
+
+\section{Definicion de Subespacio Vectorial}
+Un \textbf{subespacio} de un espacio vectorial V es un subconjunto H de V que tiene tres propiedades:
+\begin{enumerate}
+  \item El vector cero de $ V $  está en $ H^2 $
+  \item $ H $ es cerrado bajo la suma de vectores. Esto es, para cada $ u $ y $ v $ en $ H $, la suma de $ u + v $ está en $ H $
+  \item $ H $ es cerrado bajo la multiplicación por escalares. Esto es, para cada $ u $ en $ H $ y cada escalar $ c $, el vector $cu$ está en $ H $
+\end{enumerate}
+(David C. Lay, 2007, p. 220).
+\medbreak
+Así, todo subespacio es un espacio vectorial. De manera recíproca, todo espacio
+vectorial es un subespacio (de sí mismo o posiblemente de espacios mayores). El término subespacio es usado cuando se 
+consideran por lo menos dos espacios, con uno dentro
+de otro, y la frase subespacio de $ V $ identifica a $ V $ como el espacio más grande. (David C. Lay, 2007, p. 220)
+
+\begin{figure}[htbp]
+  \begin{center}
+    \includegraphics[width=0.95\textwidth]{subspace}
+    \smallbreak
+  \end{center}
+  \caption{Un subespacio de $ V $}
+\end{figure}
+
+
+
+\end{document}
