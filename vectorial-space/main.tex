@@ -86,14 +86,14 @@ Un \textbf{subespacio} de un espacio vectorial V es un subconjunto H de V que ti
 \begin{enumerate}
   \item El vector cero de $ V $  está en $ H^2 $
   \item $ H $ es cerrado bajo la suma de vectores. Esto es, para cada $ u $ y $ v $ en $ H $, la suma de $ u + v $ está en $ H $
-  \item $ H $ es cerrado bajo la multiplicación por escalares. Esto es, para cada $ u $ en $ H $ y cada escalar $ c $, el vector $cu$ está en $ H $
+  \item $ H $ es cerrado bajo la multiplicación por escalares. Esto es, para cada $ u $ en $ H $ y cada escalar $ a $, el vector $ au $ está en $ H $
 \end{enumerate}
 (David C. Lay, 2007, p. 220).
 \medbreak
 Así, todo subespacio es un espacio vectorial. De manera recíproca, todo espacio
 vectorial es un subespacio (de sí mismo o posiblemente de espacios mayores). El término subespacio es usado cuando se 
 consideran por lo menos dos espacios, con uno dentro
-de otro, y la frase subespacio de $ V $ identifica a $ V $ como el espacio más grande. (David C. Lay, 2007, p. 220)
+de otro, y la frase subespacio de $ V $ identifica a $ V $ como el espacio más grande. (David C. Lay, 2007, p. 220). Se puede decir que el subespacio $ H $ hereda las operaciones del espacio vectorial “padre” $ V $. (Stanley I. Grossman, 2007, p. 293)
 
 \begin{figure}[htbp]
   \begin{center}
@@ -103,6 +103,53 @@ de otro, y la frase subespacio de $ V $ identifica a $ V $ como el espacio más 
   \caption{Un subespacio de $ V $}
 \end{figure}
 
+\subsection{Reglas de Cerradura}
+Un subconjunto no vacío $ H $ de un espacio vectorial $ V $ es un subespacio de $ V $ si se cumplen las dos reglas de cerradura:
+
+\begin{enumerate}
+  \item Si $ u \in H $ y $ v \in H $, entonces $ u + v \in H $.
+  \item Si $ u \in H $, entonces $ au \in H $ para todo escalar $ a $
+\end{enumerate}
+
+Es obvio que si $ H $ es un espacio vectorial, entonces las dos reglas de cerradura deben cumplirse. (Stanley I. Grossman, 2007, p. 293)
+
+\subsection{Ejemplo}
+Considera el conjunto:
+{\large \[ W = \{ (x, y) \in \mathbb{R}^2 | y = 0 \} \]}
+Este conjunto contiene todos los vectores del eje $ x $, es decir: 
+{\large \[ W = \{ (x, 0) | x \in \mathbb{R} \} \]}
+y si es \textbf{un subespacio vectorial} de $ \mathbb{R}^2 $
+
+\subsubsection{Verificacion}
+Tomemos dos vectores de $ W $:
+{\large \[ u = (3, 0), \quad v = (-2, 0) \]}
+
+\begin{enumerate}
+  \item El vector cero pertenece al conjunto
+    {\large \[ (0, 0) \in W \quad porque \quad  y = 0 \]}
+  \item Cerradura bajo la suma
+    {\large \[ u + v = (3 + (-2), 0 + 0) = (1, 0) \]}
+    Como su segunda componente es cero, está en $ W $
+  \item Cerradura bajo el producto por escalar: 
+    sea $ a = 4 $
+    {\large \[ au = 3(3, 0) = (12, 0) \]}
+    También cumple $ y $ = 0, por lo tanto $au \in W$.
+\end{enumerate}
+ 
+\newpage
+
+\begin{figure}[htbp]
+  \begin{center}
+    \includegraphics[width=0.80\textwidth]{r2}
+  \end{center}
+  \caption{El subespacio $ W = \{ (x, y) \in \mathbb{R}^2 | y = 0 \} $ }
+\end{figure}
+
+\section{Referencias}
+\begin{itemize}
+  \item David C. Lay. (2007). Álgebra lineal y sus aplicaciones. Mexico. Pearson Educación
+  \item Stanley I. Grossman. (2007) .Álgebra Lineal. Mexico. The McGraw-Hill
+\end{itemize}
 
 
 \end{document}

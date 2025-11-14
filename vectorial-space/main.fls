@@ -144,6 +144,10 @@ INPUT ./assets/subspace.png
 INPUT ./assets/subspace.png
 INPUT ./assets/subspace.png
 INPUT ./assets/subspace.png
+INPUT ./assets/r2.png
+INPUT ./assets/r2.png
+INPUT ./assets/r2.png
+INPUT ./assets/r2.png
 INPUT main.aux
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
